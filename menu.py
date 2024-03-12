@@ -19,6 +19,7 @@ def menu():
             os.system('cls')
             load()
         elif eleccion == '2':
+            os.system('cls')
             show()
         elif eleccion == '5':
             close()
