@@ -2,6 +2,7 @@ import os
 from load import load
 from show import show
 from close import close
+from search import search
 def menu():
     while True:
         print('-------------------------')
@@ -21,6 +22,9 @@ def menu():
         elif eleccion == '2':
             os.system('cls')
             show()
+        elif eleccion == '3':
+            os.system('cls')
+            search()
         elif eleccion == '5':
             close()
             print('Guardado con éxito. \n Saliendo del programa...')
