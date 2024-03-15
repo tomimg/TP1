@@ -50,7 +50,7 @@ def load(data):
             break
         else:
             print('-------------------------')
-            print('Pone una edad en condiciones!')
+            print('Pone un DNI en condiciones!')
             print('-------------------------')
     
     print('-------------------------')

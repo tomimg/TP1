@@ -83,7 +83,7 @@ def modify(data):
                 break
             else:
                 print('-------------------------')
-                print('Pone una edad en condiciones!')
+                print('Pone un DNI en condiciones!')
                 print('-------------------------')
         person.name = new_name
         person.surname = new_surname
