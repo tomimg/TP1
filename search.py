@@ -27,7 +27,7 @@ def search(data):
             else:
                 print('Pone un DNI en condiciones!')
         for i, human in enumerate(data):
-            if human.dni == int(dni):
+            if int(human.dni) == int(dni):
                 print('-------------------------')
                 print('Hemos encontrado a tu persona:')
                 print('-------------------------')
