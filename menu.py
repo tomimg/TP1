@@ -3,6 +3,29 @@ from load import load
 from show import show
 from close import close
 from search import search
+from query import select
+from modify import modify
+from remove import delete
+data: list[str] = select()
+
+def modify_or_delete(data):
+    print('-------------------------')
+    print('- Seleccione una opción: ')
+    print('1. Modificar')
+    print('2. Eliminar')
+    print('-------------------------')
+
+    eleccion = input('Seleccione una opción (1-2): ')
+
+    if eleccion == '1':
+        modify(data)
+    elif eleccion == '2':
+        delete(data)
+    else:
+        print('Opción inválida.')
+
+    os.system('cls')
+
 def menu():
     while True:
         print('-------------------------')
@@ -18,15 +41,18 @@ def menu():
 
         if eleccion == '1':
             os.system('cls')
-            load()
+            load(data)
         elif eleccion == '2':
             os.system('cls')
-            show()
+            show(data)
         elif eleccion == '3':
             os.system('cls')
-            search()
+            search(data)
+        elif eleccion == '4':
+            os.system('cls')
+            modify_or_delete(data)
         elif eleccion == '5':
-            close()
+            close(data)
             print('Guardado con éxito. \n Saliendo del programa...')
             os.system('cls')
             break
