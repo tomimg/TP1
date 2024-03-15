@@ -1,9 +1,10 @@
 from factory import Human
 import os
 import msvcrt
-def find_by_name(data, name):
+def find_by_dni(data, dni):
+    dni = dni.strip()
     for person in data:
-        if person.name == name:
+        if int(person.dni) == int(dni):
             return person
     print('Persona no encontrada.')
     print('-------------------------')
@@ -15,18 +16,18 @@ def find_by_name(data, name):
 def modify(data):
     print('-------------------------')
     while True:
-        name = str(input('Ingrese el nombre de la persona que desea modificar: ')).strip().lower()
-        if name == '':
+        dni = input('Ingrese el DNI de la persona que desea modificar: ').strip()
+        if dni == '':
             print('-------------------------')
-            print('Ingresa un nombre en condiciones!')
+            print('Pone un DNI en condiciones!')
             print('-------------------------')
-        elif not name.isalnum():
-            print('-------------------------')
-            print('Pone un nombre en condiciones!')
-            print('-------------------------')
-        else: 
+        elif dni.isdigit() and int(dni) >= 0:
             break
-    person = find_by_name(data, name)
+        else:
+            print('-------------------------')
+            print('Pone un DNI en condiciones!')
+            print('-------------------------')
+    person = find_by_dni(data, dni)
     if person is not None:
         print('-------------------------')
         print("Persona encontrada:")

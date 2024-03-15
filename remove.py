@@ -3,21 +3,21 @@ import msvcrt
 def delete(data):
     print('-------------------------')
     while True:
-        name = str(input('Ingrese el nombre de la persona que desea eliminar: ')).strip().lower()
-        if name == '':
+        dni = input('Ingrese el DNI de la persona que desea eliminar: ').strip()
+        if dni == '':
             print('-------------------------')
-            print('Ingresa un nombre en condiciones!')
+            print('Pone un DNI en condiciones!')
             print('-------------------------')
-        elif not name.isalnum():
-            print('-------------------------')
-            print('Pone un nombre en condiciones!')
-            print('-------------------------')
-        else: 
+        elif dni.isdigit() and int(dni) >= 0:
             break
+        else:
+            print('-------------------------')
+            print('Pone un DNI en condiciones!')
+            print('-------------------------')
     for person in data:
-        if person.name == name:
+        if int(person.dni) == int(dni):
             data.remove(person)
-            print(f'Persona {name} eliminada.')
+            print(f'Persona con DNI {dni} eliminada.')
             return
     print('Persona no encontrada.')
     print('-------------------------')
