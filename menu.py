@@ -1,4 +1,5 @@
 import os
+import msvcrt
 from load import load
 from show import show
 from close import close
@@ -24,6 +25,9 @@ def modify_or_delete(data):
     else:
         print('Opción inválida.')
 
+    print('-------------------------')
+    print('Presione una tecla para continuar...')
+    msvcrt.getch()
     os.system('cls')
 
 def menu():

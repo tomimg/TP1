@@ -8,12 +8,24 @@ def search(data):
     print('-------------------------')
     print('Bienvenido a la busqueda de personas!')
     print('-------------------------')
-    eleccion = input(str('Ingrese d para realizar busqueda por DNI o n para realizar busqueda por nombre: '))
+    while True:
+        eleccion = input('Ingrese "D" para realizar busqueda por DNI o "N" para realizar busqueda por nombre: ').upper().strip()
+        if eleccion == 'D' or eleccion == 'N':
+            break
+        else:
+            print('Pone un D o N crack!')
     if eleccion.lower() == 'd':
         os.system('cls')
         print('-------------------------')
         print('Acabas de ingresar a la busqueda por DNI!')
-        dni = int(input('Ingrese el DNI de la persona que desea buscar: '))
+        while True:
+            dni = input('Ingrese el DNI de la persona que desea buscar: ').strip()
+            if dni == '':
+                print('Pone un DNI en condiciones!')
+            elif dni.isdigit() and int(dni) >= 0:
+                break
+            else:
+                print('Pone un DNI en condiciones!')
         for i, human in enumerate(data):
             if human.dni == int(dni):
                 print('-------------------------')
@@ -38,7 +50,14 @@ def search(data):
         os.system('cls')
         print('-------------------------')
         print('Acabas de ingresar a la busqueda por nombre!')
-        nombre = str(input('Ingrese el nombre de la persona que desea buscar: '))
+        while True:
+            nombre = str(input('Ingrese el nombre de la persona que desea buscar: ')).strip()
+            if nombre == '':
+                print('Ingresa un nombre en condiciones!')
+            elif not nombre.isalnum():
+                print('Pone un nombre en condiciones!')
+            else: 
+                break
         for i, human in enumerate(data):
             if human.name.lower() == nombre.lower():
                 print('-------------------------')
