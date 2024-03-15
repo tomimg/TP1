@@ -18,9 +18,9 @@ def modify_or_delete(data):
 
     eleccion = input('Seleccione una opción (1-2): ')
 
-    if eleccion == '1':
+    if eleccion.strip() == '1':
         modify(data)
-    elif eleccion == '2':
+    elif eleccion.strip() == '2':
         delete(data)
     else:
         print('Opción inválida.')
@@ -43,19 +43,19 @@ def menu():
 
         eleccion = (input('Seleccione una opción (1-5): '))
 
-        if eleccion == '1':
+        if eleccion.strip() == '1':
             os.system('cls')
             load(data)
-        elif eleccion == '2':
+        elif eleccion.strip() == '2':
             os.system('cls')
             show(data)
-        elif eleccion == '3':
+        elif eleccion.strip() == '3':
             os.system('cls')
             search(data)
-        elif eleccion == '4':
+        elif eleccion.strip() == '4':
             os.system('cls')
             modify_or_delete(data)
-        elif eleccion == '5':
+        elif eleccion.strip() == '5':
             close(data)
             print('Guardado con éxito. \n Saliendo del programa...')
             os.system('cls')
